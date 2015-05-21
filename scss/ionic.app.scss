@@ -19,8 +19,37 @@ $dark:                            #444 !default;
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 $green: #039e79;
 $balanced: $green;
-
+$font-family-sans-serif: 'Merriweather Sans', sans-serif;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+.pane, .view {
+	background: #DFDFDF;
+}
+
+.bar-header {
+	.title {
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+}
+
+/* search */
+.search {
+	.search-item {
+		margin-bottom: 20px;
+		input, select {
+			border: 1px solid #DFDFDF;
+			border-radius: 5px;
+			width: 100%;
+			padding: 15px;
+			background: transparent;
+			-webkit-appearance: none;
+			font-size: 20px;
+			font-size: 5vw;
+			height: auto;
+			line-height: auto;
+		}
+	}
+}
