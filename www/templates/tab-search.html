@@ -1,26 +1,41 @@
 <ion-view view-title="Search" class="search">
-  <ion-content>
-    <div class="card">
-      <div class="item item-text-wrap">
-        <div class="search-item">
-          <input type="text" ng-model="search.text" placeholder="Browse by keyword">
-        </div>
-        <div class="search-item">
-          <select ng-model="search.topic">
-            <option value="">Browse by topic</option>
-          </select>
-        </div>
-        <div class="search-item">
-        <select ng-model="search.lyricist">
-          <option value="">Browse by lyricist</option>
-        </select>
-        </div>
-        <div class="search-item">
-          <select ng-model="search.topic">
-            <option value="">Browse by topic</option>
-          </select>
-        </div>
-      </div>
-    </div>
-  </ion-content>
+	<ion-content>
+		<div class="search-form">
+			<div class="card">
+				<div class="item item-text-wrap">
+					<div class="search-item textfield">
+						<input type="text" ng-model="search.text" placeholder="Browse by keyword">
+					</div>
+					<div class="search-item dropdown">
+						<select ng-model="search.category">
+							<option value="">Browse by category</option>
+						</select>
+					</div>
+					<div class="search-item dropdown">
+						<select ng-model="search.lyricist">
+							<option value="">Browse by lyricist</option>
+						</select>
+					</div>
+					<div class="search-item dropdown">
+						<select ng-model="search.subject">
+							<option value="">Browse by subject</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col buttons">
+					<button class="button icon-left ion-search button-balanced">Start</button>
+					<button class="button icon-left ion-refresh button-reset">Reset</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="search-results">
+			<div class="card">
+				
+			</div>
+		</div>
+
+	</ion-content>
 </ion-view>

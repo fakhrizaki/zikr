@@ -1,6 +1,6 @@
 {
   "name": "zikr",
-  "app_id": "",
+  "app_id": "f3f51a1d",
   "gulpStartupTasks": [
     "sass",
     "watch"

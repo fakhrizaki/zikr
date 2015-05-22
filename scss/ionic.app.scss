@@ -19,10 +19,15 @@ $dark:                            #444 !default;
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 $green: #039e79;
 $balanced: $green;
-$font-family-sans-serif: 'Merriweather Sans', sans-serif;
+$font-roboto: 'Roboto Condensed', sans-serif;
+$font-merriweather: 'Merriweather Sans', sans-serif;
+$font-cabin: 'Cabin', sans-serif;
+$font-kaushan: 'Kaushan Script', cursive;
+$font-family-sans-serif: $font-kaushan;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
+@import "node_modules/node-bourbon/node_modules/bourbon/app/assets/stylesheets/_bourbon";
 
 .pane, .view {
 	background: #DFDFDF;
@@ -30,16 +35,23 @@ $font-family-sans-serif: 'Merriweather Sans', sans-serif;
 
 .bar-header {
 	.title {
-		text-transform: uppercase;
+		// text-transform: uppercase;
 		font-weight: bold;
 	}
+}
+.button {
+	// text]transform: uppercase;
+	border: none;
 }
 
 /* search */
 .search {
 	.search-item {
 		margin-bottom: 20px;
-		input, select {
+		position: relative;
+
+		input[type="text"],
+		select {
 			border: 1px solid #DFDFDF;
 			border-radius: 5px;
 			width: 100%;
@@ -49,7 +61,49 @@ $font-family-sans-serif: 'Merriweather Sans', sans-serif;
 			font-size: 20px;
 			font-size: 5vw;
 			height: auto;
-			line-height: auto;
+			line-height: normal;
+			position: relative;
 		}
+
+		&:after {
+			position: absolute;
+			height: 20px;
+			top: 50%;
+			margin-top: -10px;
+			right: 15px;
+			z-index: 1;
+			font-family: "Ionicons";
+			display: inline-block;
+			color: #ccc;
+			font-size: 20px;
+		}
+
+		&.dropdown {
+			&:after {
+				content: '\f123';
+			}
+		}
+
+		&.textfield {
+			&:after {
+				content: '\f21f';
+			}
+			input[type=text] {
+				@include placeholder {
+					color: #000;
+				}
+			}
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	.button-reset {
+		background-color: lighten($green, 5%);
+		color: #fff;
+	}
+	.buttons {
+		text-align: center;
 	}
 }
