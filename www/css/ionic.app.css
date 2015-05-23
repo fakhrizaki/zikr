@@ -7675,11 +7675,23 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-.pane, .view {
+@font-face {
+  font-family: "NotoNastaliqUrduDraft";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/NotoNastaliqUrduDraft.eot?#iefix") format("embedded-opentype"), url("../fonts/NotoNastaliqUrduDraft.woff") format("woff"), url("../fonts/NotoNastaliqUrduDraft.svg#NotoNastaliqUrduDraft") format("svg"); }
+
+.urdu {
+  font-family: 'NotoNastaliqUrduDraft', serif;
+  direction: rtl;
+  word-spacing: 3px; }
+
+.pane, .view, .modal {
   background: #DFDFDF; }
 
-.bar-header .title {
-  font-weight: bold; }
+.bar-balanced-light {
+  background-color: #027b5e;
+  color: #fff; }
 
 .button {
   border: none; }
@@ -7723,8 +7735,17 @@ a.button {
       content: '\f21f'; }
   .search .search-item:last-child {
     margin-bottom: 0; }
+.search .buttons {
+  text-align: center; }
 .search .button-reset {
   background-color: #03b78c;
   color: #fff; }
-.search .buttons {
-  text-align: center; }
+.search .search-results {
+  margin-top: 20px; }
+
+.kalaam .card .item {
+  text-align: center;
+  font-size: 6vw;
+  line-height: 2.5; }
+  .kalaam .card .item.matla {
+    color: #039e79; }

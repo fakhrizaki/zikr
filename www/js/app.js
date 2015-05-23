@@ -21,7 +21,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 	});
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+
+	// Set config options
+	$ionicConfigProvider.scrolling.jsScrolling(false);
 
 	// Ionic uses AngularUI Router which uses the concept of states
 	// Learn more here: https://github.com/angular-ui/ui-router
@@ -37,17 +40,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 	})
 
 	// Each tab has its own nav history stack:
-
-	.state('tab.dash', {
-		url: '/dash',
-		views: {
-			'tab-dash': {
-				templateUrl: 'templates/tab-dash.html',
-				controller: 'DashCtrl'
-			}
-		}
-	})
-
 	.state('tab.search', {
 			url: '/search',
 			views: {
@@ -57,12 +49,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 				}
 			}
 		})
-		.state('tab.chat-detail', {
-			url: '/chats/:chatId',
+		.state('tab.kalaam', {
+			url: '/kalaam/:kalaamId',
 			views: {
-				'tab-chats': {
-					templateUrl: 'templates/chat-detail.html',
-					controller: 'ChatDetailCtrl'
+				'tab-search': {
+					templateUrl: 'templates/kalaam.html',
+					controller: 'KalaamCtrl'
 				}
 			}
 		})
@@ -78,6 +70,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 	});
 
 	// if none of the above states are matched, use this as the fallback
-	$urlRouterProvider.otherwise('/tab/dash');
+	$urlRouterProvider.otherwise('/tab/search');
 
 });

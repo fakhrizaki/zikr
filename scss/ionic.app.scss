@@ -32,18 +32,23 @@ $font-family-sans-serif: $font-cabin-condensed;
 @import "www/lib/ionic/scss/ionic";
 @import "node_modules/node-bourbon/node_modules/bourbon/app/assets/stylesheets/_bourbon";
 
-.pane, .view {
+@include font-face("NotoNastaliqUrduDraft", "../fonts/NotoNastaliqUrduDraft", $file-formats: svg eot woff);
+
+.urdu {
+	font-family: 'NotoNastaliqUrduDraft', serif;
+	direction: rtl;
+	word-spacing: 3px;
+}
+
+.pane, .view, .modal {
 	background: #DFDFDF;
 }
 
-.bar-header {
-	.title {
-		// text-transform: uppercase;
-		font-weight: bold;
-	}
+.bar-balanced-light {
+	background-color: darken($green, 7%);
+	color: #fff;
 }
 .button {
-	// text]transform: uppercase;
 	border: none;
 }
 
@@ -102,11 +107,32 @@ $font-family-sans-serif: $font-cabin-condensed;
 			margin-bottom: 0;
 		}
 	}
+
+	.buttons {
+		text-align: center;
+	}
+
 	.button-reset {
 		background-color: lighten($green, 5%);
 		color: #fff;
 	}
-	.buttons {
-		text-align: center;
+
+	.search-results {
+		margin-top: 20px;
+	}
+}
+
+.kalaam {
+	.card {
+		.item {
+			text-align: center;
+			font-size: 6vw;
+			line-height: 2.5;
+
+			&.matla {
+				// background: darken(#fff, 3%);
+				color: $green;
+			}
+		}
 	}
 }
