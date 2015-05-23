@@ -2566,7 +2566,7 @@ body, .ionic-body {
   color: #000;
   word-wrap: break-word;
   font-size: 14px;
-  font-family: 'Kaushan Script', cursive;
+  font-family: 'Cabin Condensed', sans-serif;
   line-height: 20px;
   text-rendering: optimizeLegibility;
   -webkit-backface-visibility: hidden;
@@ -2800,7 +2800,7 @@ cite {
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #000;
   font-weight: 500;
-  font-family: 'Kaushan Script', cursive;
+  font-family: 'Cabin Condensed', sans-serif;
   line-height: 1.2; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
     font-weight: normal;
@@ -4142,7 +4142,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
   white-space: nowrap;
   font-weight: 400;
   font-size: 14px;
-  font-family: 'Kaushan Script', cursive;
+  font-family: 'Cabin Condensed', sans-serif;
   opacity: 0.7; }
   .tab-item:hover {
     cursor: pointer; }
@@ -5654,7 +5654,7 @@ label, input, button, select, textarea {
   line-height: 1.42857; }
 
 input, button, select, textarea {
-  font-family: 'Kaushan Script', cursive; }
+  font-family: 'Cabin Condensed', sans-serif; }
 
 .item-input {
   display: -webkit-box;
@@ -7713,16 +7713,14 @@ a.button {
     font-size: 20px; }
   .search .search-item.dropdown:after {
     content: '\f123'; }
-  .search .search-item.textfield:after {
-    content: '\f21f'; }
-  .search .search-item.textfield input[type=text]::-webkit-input-placeholder {
-    color: #000; }
-  .search .search-item.textfield input[type=text]::-moz-placeholder {
-    color: #000; }
-  .search .search-item.textfield input[type=text]:-moz-placeholder {
-    color: #000; }
-  .search .search-item.textfield input[type=text]:-ms-input-placeholder {
-    color: #000; }
+  .search .search-item.textfield {
+    /* input[type=text] {
+				@include placeholder {
+					color: #000;
+				}
+			} */ }
+    .search .search-item.textfield:after {
+      content: '\f21f'; }
   .search .search-item:last-child {
     margin-bottom: 0; }
 .search .button-reset {

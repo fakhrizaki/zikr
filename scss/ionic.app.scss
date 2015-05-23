@@ -22,8 +22,11 @@ $balanced: $green;
 $font-roboto: 'Roboto Condensed', sans-serif;
 $font-merriweather: 'Merriweather Sans', sans-serif;
 $font-cabin: 'Cabin', sans-serif;
+$font-cabin-condensed: 'Cabin Condensed', sans-serif;
 $font-kaushan: 'Kaushan Script', cursive;
-$font-family-sans-serif: $font-kaushan;
+$font-lato: 'Lato', sans-serif;
+$font-roboto-condensed: 'Roboto Condensed', sans-serif;
+$font-family-sans-serif: $font-cabin-condensed;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
@@ -88,11 +91,11 @@ $font-family-sans-serif: $font-kaushan;
 			&:after {
 				content: '\f21f';
 			}
-			input[type=text] {
+			/* input[type=text] {
 				@include placeholder {
 					color: #000;
 				}
-			}
+			} */
 		}
 
 		&:last-child {
