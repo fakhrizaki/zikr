@@ -7681,10 +7681,32 @@ a.button {
   font-weight: normal;
   src: url("../fonts/NotoNastaliqUrduDraft.eot?#iefix") format("embedded-opentype"), url("../fonts/NotoNastaliqUrduDraft.woff") format("woff"), url("../fonts/NotoNastaliqUrduDraft.svg#NotoNastaliqUrduDraft") format("svg"); }
 
+@font-face {
+  font-family: AlFatemi;
+  src: url('../fonts/al-fatemi.ttf'); }
+
+@font-face {
+  font-family: AlKanz;
+  src: url('../fonts/al-kanz.ttf'); }
+
 .urdu {
   font-family: 'NotoNastaliqUrduDraft', serif;
   direction: rtl;
   word-spacing: 3px; }
+
+.al-fatemi {
+  font-family: 'AlFatemi', serif;
+  direction: rtl;
+  font-size: 1.2rem; }
+
+.al-kanz {
+  font-family: 'AlKanz', serif;
+  direction: rtl;
+  font-size: 1.2rem; }
+
+.ld {
+  font-family: 'AlFatemi', serif;
+  direction: rtl; }
 
 .pane, .view, .modal {
   background: #DFDFDF; }

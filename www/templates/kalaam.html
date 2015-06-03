@@ -4,46 +4,9 @@
 		<button class="button icon ion-ios-pricetag-outline" ng-click="doSomething()"></button>
 	</ion-nav-buttons>
 	<ion-content>
-		<div class="card">
-			<div class="item urdu matla">
-				یاد آتی ہے اہلِ ولا کو<br>
-				کیسے بُھولیں بُرھان الھدی کو<br>
-			</div>
-		</div>
-		<div class="card">
-			<div class="item urdu">
-				کس طرح اپنے دل کو منائیں<br>
-				غم جدائی کا کیسے اُٹھائیں<br>
-				صبر آتا نہیں ہم کو مولی<br>
-				ہو کے مجبور اشک بہائیں<br>
-				رحم نہ آیا چرخِ قضا کو
-			</div>
-		</div>
-		<div class="card">
-			<div class="item urdu">
-				کس طرح اپنے دل کو منائیں<br>
-				غم جدائی کا کیسے اُٹھائیں<br>
-				صبر آتا نہیں ہم کو مولی<br>
-				ہو کے مجبور اشک بہائیں<br>
-				رحم نہ آیا چرخِ قضا کو
-			</div>
-		</div>
-		<div class="card">
-			<div class="item urdu">
-				کس طرح اپنے دل کو منائیں<br>
-				غم جدائی کا کیسے اُٹھائیں<br>
-				صبر آتا نہیں ہم کو مولی<br>
-				ہو کے مجبور اشک بہائیں<br>
-				رحم نہ آیا چرخِ قضا کو
-			</div>
-		</div>
-		<div class="card">
-			<div class="item urdu">
-				کس طرح اپنے دل کو منائیں<br>
-				غم جدائی کا کیسے اُٹھائیں<br>
-				صبر آتا نہیں ہم کو مولی<br>
-				ہو کے مجبور اشک بہائیں<br>
-				رحم نہ آیا چرخِ قضا کو
+		<div class="card" ng-repeat="stanza in kalaam.stanzas">
+			<div class="item urdu" ng-class="{'matla': stanza.isMatla}">
+				<div ng-repeat="line in stanza.lines">{{line}}</div>
 			</div>
 		</div>
 	</ion-content>

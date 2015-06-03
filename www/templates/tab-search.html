@@ -1,58 +1,44 @@
 <ion-view view-title="Search" class="search">
 	<ion-content>
-		<div class="search-form">
+		<form ng-submit="search(criteria)" class="search-form">
 			<div class="card">
 				<div class="item item-text-wrap">
 					<div class="search-item textfield">
-						<input type="text" ng-model="search.text" placeholder="Browse by keyword">
+						<input type="text" ng-model="criteria.keyword" placeholder="Browse by keyword">
 					</div>
 					<div class="search-item dropdown">
-						<select ng-model="search.category">
+						<select ng-model="criteria.category">
 							<option value="">Browse by category</option>
+							<option ng-repeat="item in categories">{{item}}</option>
 						</select>
 					</div>
 					<div class="search-item dropdown">
-						<select ng-model="search.lyricist">
+						<select ng-model="criteria.lyricist">
 							<option value="">Browse by lyricist</option>
+							<option ng-repeat="item in lyricists">{{item}}</option>
 						</select>
 					</div>
 					<div class="search-item dropdown">
-						<select ng-model="search.subject">
+						<select ng-model="criteria.subject">
 							<option value="">Browse by subject</option>
+							<option ng-repeat="item in subjects">{{item}}</option>
 						</select>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col buttons">
-					<button class="button icon-left ion-search button-balanced" ng-click="search()">Search</button>
+					<button class="button icon-left ion-search button-balanced" type="submit">Search</button>
 					<button class="button icon-left ion-refresh button-reset">Reset</button>
 				</div>
 			</div>
-		</div>
+		</form>
 
-		<div class="search-results" id="search-results">
-			<div class="list urdu">
-				<a ng-click="openKalaam()" class="item">اے اللہ نا داعی نبی نا پیارا</a>
-				<a href="#/tab/kalaam/001" class="item">یاد آتی ہے اہلِ ولا کو</a>
-				<a href="#/tab/kalaam/001" class="item">حسین تو حسین ہے</a>
-				<a href="#/tab/kalaam/001" class="item">شبیر ڈھوندتے رہے پیارے گئے کہاں</a>
-				<a href="#/tab/kalaam/001" class="item">دربارِ حاتم ما لاکھوں سلام</a>
-				<a href="#/tab/kalaam/001" class="item">اے اللہ نا داعی نبی نا پیارا</a>
-				<a href="#/tab/kalaam/001" class="item">یاد آتی ہے اہلِ ولا کو</a>
-				<a href="#/tab/kalaam/001" class="item">حسین تو حسین ہے</a>
-				<a href="#/tab/kalaam/001" class="item">شبیر ڈھوندتے رہے پیارے گئے کہاں</a>
-				<a href="#/tab/kalaam/001" class="item">دربارِ حاتم ما لاکھوں سلام</a>
-				<a href="#/tab/kalaam/001" class="item">اے اللہ نا داعی نبی نا پیارا</a>
-				<a href="#/tab/kalaam/001" class="item">یاد آتی ہے اہلِ ولا کو</a>
-				<a href="#/tab/kalaam/001" class="item">حسین تو حسین ہے</a>
-				<a href="#/tab/kalaam/001" class="item">شبیر ڈھوندتے رہے پیارے گئے کہاں</a>
-				<a href="#/tab/kalaam/001" class="item">دربارِ حاتم ما لاکھوں سلام</a>
-				<a href="#/tab/kalaam/001" class="item">اے اللہ نا داعی نبی نا پیارا</a>
-				<a href="#/tab/kalaam/001" class="item">یاد آتی ہے اہلِ ولا کو</a>
-				<a href="#/tab/kalaam/001" class="item">حسین تو حسین ہے</a>
-				<a href="#/tab/kalaam/001" class="item">شبیر ڈھوندتے رہے پیارے گئے کہاں</a>
-				<a href="#/tab/kalaam/001" class="item">دربارِ حاتم ما لاکھوں سلام</a>
+		<div class="search-results" id="search-results" ng-if="kalaams">
+			<div class="list al-fatemi">
+				<a collection-repeat="kalaam in kalaams"
+					href="#/tab/kalaam/{{ kalaam.id }}"
+					class="item">{{ kalaam.title }}</a>
 			</div>
 		</div>
 
