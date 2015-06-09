@@ -34,16 +34,8 @@ $font-family-sans-serif: $font-cabin-condensed;
 @import "node_modules/node-bourbon/node_modules/bourbon/app/assets/stylesheets/_bourbon";
 
 @include font-face("NotoNastaliqUrduDraft", "../fonts/NotoNastaliqUrduDraft", $file-formats: svg eot woff);
-
-
-@font-face {
-    font-family: AlFatemi;
-    src: url('../fonts/al-fatemi.ttf');
-}
-@font-face {
-    font-family: AlKanz;
-    src: url('../fonts/al-kanz.ttf');
-}
+@include font-face("AlFatemi", "../fonts/al-fatemi", $file-formats: ttf);
+@include font-face("AlKanz", "../fonts/al-kanz", $file-formats: ttf);
 
 .urdu {
 	font-family: 'NotoNastaliqUrduDraft', serif;
@@ -53,18 +45,15 @@ $font-family-sans-serif: $font-cabin-condensed;
 
 .al-fatemi {
 	font-family: 'AlFatemi', serif;
-	direction: rtl;
-	font-size: 1.2rem;
 }
 .al-kanz {
 	font-family: 'AlKanz', serif;
-	direction: rtl;
-	font-size: 1.2rem;
 }
 
 .ld {
-	font-family: 'AlFatemi', serif;
+	@extend .al-kanz;
 	direction: rtl;
+	word-spacing: 3px;
 }
 
 .pane, .view, .modal {

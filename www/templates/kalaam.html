@@ -5,7 +5,7 @@
 	</ion-nav-buttons>
 	<ion-content>
 		<div class="card" ng-repeat="stanza in kalaam.stanzas">
-			<div class="item urdu" ng-class="{'matla': stanza.isMatla}">
+			<div class="item {{kalaam.language}}" ng-class="{'matla': stanza.isMatla}">
 				<div ng-repeat="line in stanza.lines">{{line}}</div>
 			</div>
 		</div>

@@ -15,13 +15,12 @@
 					<div class="search-item dropdown">
 						<select ng-model="criteria.lyricist">
 							<option value="">Browse by lyricist</option>
-							<option ng-repeat="item in lyricists">{{item}}</option>
+							<option ng-repeat="item in lyricist">{{item}}</option>
 						</select>
 					</div>
 					<div class="search-item dropdown">
 						<select ng-model="criteria.subject">
 							<option value="">Browse by subject</option>
-							<option ng-repeat="item in subjects">{{item}}</option>
 						</select>
 					</div>
 				</div>
@@ -35,10 +34,11 @@
 		</form>
 
 		<div class="search-results" id="search-results" ng-if="kalaams">
-			<div class="list al-fatemi">
-				<a collection-repeat="kalaam in kalaams"
-					href="#/tab/kalaam/{{ kalaam.id }}"
-					class="item">{{ kalaam.title }}</a>
+			<div class="list">
+				<a collection-repeat="kalaam in searchResults"
+					href="#/tab/kalaam/{{ kalaam._id.$oid }}"
+					class="item"
+					ng-class="kalaam.language">{{ kalaam.title }}</a>
 			</div>
 		</div>
 
